@@ -1,0 +1,29 @@
+doctype html
+head
+	meta(charset='UTF-8')
+
+	block head
+	script(src='/scripts/DOM-utils.js')
+
+	link(rel='stylesheet' href='/styles/print.sass')
+	script(src='/node_modules/pagedjs/dist/paged.polyfill.js')
+	script(src='/scripts/print/paged_extender.js')
+
+	script(src='/scripts/print/page_extra.js')
+	script(src='/scripts/print/table_of_contents.js')
+	script(src='/scripts/print/alphabetical_index.js')
+
+	if isPreview
+		script(src='https://unpkg.com/socket.io@4.3.2/client-dist/socket.io.js')
+		script(src='/scripts/preview.js')
+
+	template#page-extra
+		.page-number
+		.chapter-flag
+
+body
+	section#cover
+	section#table-of-contents
+		h1 Table of contents
+
+	block content

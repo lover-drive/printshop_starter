@@ -1,0 +1,39 @@
+name: Printshop Starter
+author: Alice Loverdrive
+
+dev_port: 8080
+
+base_dir: .
+content_dir: content
+
+static:
+  - dir: ./images
+    url: /images
+  - dir: ./scripts
+    url: /scripts
+  - dir: ./node_modules
+    url: /node_modules
+
+styles:
+  dir: styles
+  url: /styles
+  postcss_plugins: []
+
+templates:
+  - url: /print
+    template: templates/print.pug
+    defaults:
+      isPreview: true
+  - url: /web
+    template: templates/web.pug
+
+pdf:
+  default_url: /print?isPreview=false
+
+epub:
+  css: styles/epub.sass
+  default_url: /web
+
+static_html:
+  include:
+    - index.pug

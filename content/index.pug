@@ -1,0 +1,45 @@
+h2 WTF is this thing?
+pre
+	code.
+		npm i -g printshop
+		printshop create my-new-book
+
+p #[dfn printshop] is a simple CLI tool to publish e-books. It allows for export to .pdf, .epub and static site format, because why not.
+
+h3 So, it's like InDesign, but for tech junkies?
+p Yup. I got so fucking fed up with InDesign, so I decided to switch to layouting my shit with html and css. Well, with pug and sass, but who cares?
+
+h3 What should I know?
+p First of all, read:
+ul
+	li #[a(href='https://pugjs.org/api/getting-started.html' target='_blank') pug documentations]
+	li #[a(href='https://www.pagedjs.org/documentation/' target='_blank') paged.js documentation]
+	li #[a(href='https://developer.mozilla.org/' target='_blank') MDN]
+
+h2 Contributing
+p If you don't have anything better to do, go ahead. Just clone this rep, hit me up with a PR and I'll check it out.
+
+h2 How to use this shit
+p First of all, create a project:
+code printshop create my-new-book
+
+p It will create a folder my-new-book, which will look like this:
+pre
+	code.
+		my-new-book
+			content/
+				index.pug
+			fonts/
+			images/
+				cover.jpg
+			scripts/
+				print/
+					paged_extender.js
+				hot_reload.js
+			styles/
+				print.sass
+				web.sass
+			templates/
+				print.pug
+				web.pug
+			printshop.config.yaml

@@ -1,0 +1,38 @@
+@import print/extra
+@import print/table-of-contents
+	
+@page
+	size: A5
+	background: white
+
+	margin: 80pt
+	margin-top: 40pt
+
+body
+	font-size: 10pt
+	line-height: 12pt
+
+h1, h2, h3, h4, h5, h6
+	text-transform: uppercase
+	font-weight: 900
+
+h2
+	break-before: always
+	string-set: title content(text)
+
+.pagedjs_page
+	position: relative
+	overflow: hidden
+
+a
+	color: inherit
+
+a::after
+	content: ", page " target-counter(attr(href url), page)
+
+@media screen
+	body
+		background: #333
+
+	.pagedjs_page
+		margin: 20px

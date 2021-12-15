@@ -1,0 +1,18 @@
+.pagedjs_left_page
+	.page-number
+		left: 12pt
+
+.pagedjs_right_page
+	.page-number
+		right: 12pt
+
+.page-number
+	position: absolute
+	bottom: 0
+	transform: translateY(30%)
+	font-size: 100pt
+	line-height: 100%
+	font-weight: 900
+
+	&::after
+		content: counter(page)

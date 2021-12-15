@@ -1,0 +1,14 @@
+{
+  "name": "printshop-starter-kit",
+  "version": "1.0.0",
+  "description": "Boilerplate template for printshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pagedjs": "^0.2.0"
+  }
+}
