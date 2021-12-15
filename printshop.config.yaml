@@ -11,8 +11,6 @@ static:
     url: /images
   - dir: ./scripts
     url: /scripts
-  - dir: ./node_modules
-    url: /node_modules
 
 styles:
   dir: styles
