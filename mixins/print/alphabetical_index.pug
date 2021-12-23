@@ -1,0 +1,3 @@
+mixin index(category, description)
+	span.index(data-index-category=category, data-index-description=description, id=`${category}, ${description}`.replace(/s/g, '_').toUpperCase())
+		block

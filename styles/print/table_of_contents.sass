@@ -1,0 +1,26 @@
+#table-of-contents, #index
+	page: table_of_contents
+	height: 100%
+	columns: 2
+	column-fill: auto
+
+	div
+		margin-bottom: 2rem
+
+	a
+		position: relative
+		display: block
+		text-decoration: none
+
+		&::after
+			position: absolute
+			right: 0
+			content: target-counter(attr(href url), page)
+
+	a[data-depth="1"]
+		font-size: 1.25em
+		font-weight: bold
+
+	.toc-section
+		break-inside: avoid
+		margin-bottom: 1rem

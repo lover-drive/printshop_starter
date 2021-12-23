@@ -1,38 +1,69 @@
+@import common
 @import print/extra
-@import print/table-of-contents
+@import print/table_of_contents
 	
 @page
 	size: A5
 	background: white
 
-	margin: 80pt
+	margin: 40pt
 	margin-top: 40pt
 
-body
+@page:left
+	margin-left: 120pt
+
+@page:right
+	margin-right: 120pt
+
+html
 	font-size: 10pt
-	line-height: 12pt
-
-h1, h2, h3, h4, h5, h6
-	text-transform: uppercase
-	font-weight: 900
-
-h2
-	break-before: always
-	string-set: title content(text)
+	line-height: 120%
 
 .pagedjs_page
 	position: relative
 	overflow: hidden
 
-a
-	color: inherit
+.pagedjs_page_content > div
+	height: 100%
 
-a::after
-	content: ", page " target-counter(attr(href url), page)
+#cover
+	page: cover
+	height: 100%
+	font-size: 50pt
+	display: flex
+	align-items: center
+	justify-content: center
 
-@media screen
-	body
-		background: #333
+	&::before
+		content: '[COVER]'
 
-	.pagedjs_page
-		margin: 20px
+@page cover
+	margin: 0
+
+.pagedjs_cover_page .page_number
+	display: none
+
+aside
+	max-width: 60%
+	padding: 1rem
+	background: black
+	color: white
+	margin-bottom: 1rem
+
+	font-size: 80%
+	line-height: 120%
+
+	& > *:first-child
+		margin-top: 0
+
+	& > *:last-child
+		margin-bottom: 0
+
+.pagedjs_left_page aside
+	float: left
+	margin-left: 1rem
+
+.pagedjs_right_page aside
+	float: right
+	margin-left: 1rem
+	margin-right: -25%
